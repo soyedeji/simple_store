@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.includes(:category).all
+  end
+
   def show
-    @product = Product.find_by(id: params[:id])
-    if @product.nil?
-      redirect_to products_path, alert: "Product not found."
-    end
+    @product = Product.find(params[:id])
   end
 end

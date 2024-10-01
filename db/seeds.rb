@@ -23,3 +23,5 @@ products.each do |product_row|
     category: category                             # Associates the product with its category
   )
 end
+
+puts "Products and Categories have been successfully seeded!"
